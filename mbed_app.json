@@ -1,0 +1,11 @@
+{
+    "target_overrides": {
+        "*": {
+            "target.console-uart" : true,
+            "platform.stdio-buffered-serial" : false,
+            "platform.cpu-stats-enabled": 1,
+            "target.macros_add" : ["MBED_TICKLESS"],
+            "target.device_has_add" : ["LPTICKER"]
+        }
+    }
+}
