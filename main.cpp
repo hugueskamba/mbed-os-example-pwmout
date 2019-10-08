@@ -16,9 +16,14 @@ PwmOut led(PTC11);
 
 void flip_pwm_state()
 {
-    static bool pwm_state = false;
-    led.enable_pwm(pwm_state);
+    static bool pwm_state = true;
     pwm_state = !pwm_state;
+
+    if (pwm_state) {
+        led.resume();
+    } else {
+        led.suspend();
+    }
 }
 
 int main(void)
